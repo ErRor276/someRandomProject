@@ -20,8 +20,9 @@ class AdminPanelController extends Controller
 		return view('admin.tables', compact('counts','users'));
 	}
 
-	public function showOrder()
-	{
-		return view('admin.orders');
-	}
+	// 
+	// public function showProduct()
+	// {
+	// 	return view('admin.products');
+	// }
 }

@@ -15,36 +15,36 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Oders</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="orderTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
+                      <th>OrderID</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
                       <th>Address</th>
-                      <th>Phone Number</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
+                      <th>OrderID</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
                       <th>Address</th>
-                      <th>Phone Number</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                   
+                   @foreach($order as $orders)
                         <tr>
-                          <td>haha</td>
-                          <td>haha</td>
-                          <td>haha</td>
-                          <td>hehe</td>
+                          <td>{{ $orders->order_id }}</td>
+                          <td>{{ $orders->product_name }}</td>
+                          <td>{{ $orders->quantity }}
+                          <td>{{ $orders->order_location }}</td>
                         </tr>
-                
+                  @endforeach
                   </tbody>
                 </table>
               </div>
@@ -67,13 +67,8 @@
   <!-- Custom scripts for all pages-->
   <script src="{{ URL::asset('administrator/js/sb-admin-2.min.js') }}"></script>
 
-  <!-- Page level plugins -->
-{{--   <script src="{{ URL::asset('administrator/vendor/datatables/jquery.dataTables.min.js') }}"></script> --}}
-  <script type="text/javascript">
-    $(document).ready( function () {
-    $('#orderTable').DataTable();
-} );
-    </script>
+
+  <script src="{{ URL::asset('administrator/vendor/datatables/jquery.dataTables.min.js') }}"></script>
   <script src="{{ URL::asset('administrator/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
   <!-- Page level custom scripts -->
